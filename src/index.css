@@ -1,16 +1,13 @@
-/* Example CSS for enhancing TodoList app */
-
-/* Reset and base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #eff6ff;
-    color: #202124;
+  font-family: "Inter", sans-serif;
+  background-color: #eff6ff;
+  color: #202124;
 }
 
 h1,
@@ -18,120 +15,126 @@ h2,
 h3,
 input,
 button {
-    font-family: 'Press Start 2P', system-ui;
+  font-family: "Press Start 2P", system-ui;
 }
 
 #root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: #333;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
 }
 
 /* TodoInput component */
 header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 400px;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  gap: 10px;
 }
 
 header input {
-    flex: 1;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
 }
 
 header button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 header button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
 /* TodoList component */
 .main {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .todoItem {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .todoItem:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
 }
 
-.todoItem.completed {
-    background-color: #e0f2e9; /* Light green for completed tasks */
-    text-decoration: line-through; /* Strike through completed tasks */
+.todoItem.complete {
+  background: #d4edda; /* Light green background */
+  text-decoration: line-through; /* Strike-through text */
+  transition: background-color 0.3s ease;
+}
+
+.todoItem.incomplete {
+  background: #ffcccc; /* Light red background */
+  text-decoration: none; /* Remove strike-through */
+  transition: background-color 0.3s ease;
 }
 
 .todoItem p {
-    flex: 1;
-    margin: 0;
-    font-size: 1rem;
+  flex: 1;
 }
 
 .actionsContainer {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .actionsContainer button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  transition-duration: 200ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .actionsContainer button:hover {
-    color: #777;
+  opacity: 0.7;
 }
 
 @media (max-width: 600px) {
-    header button {
-        font-size: 0.9rem;
-    }
+  header button {
+    font-size: 0.9rem;
+  }
 
-    .todoItem {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .todoItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .actionsContainer {
-        margin-top: 10px;
-    }
+  .actionsContainer {
+    margin-top: 10px;
+  }
 }
