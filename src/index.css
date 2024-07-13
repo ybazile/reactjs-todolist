@@ -37,9 +37,13 @@ h1 {
 /* TodoInput component */
 header {
   display: flex;
+  flex-direction: row; /* Initially set to row */
   align-items: center;
+  justify-content: space-between; /* Ensure items are spaced apart */
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
   gap: 10px;
 }
 
@@ -122,6 +126,17 @@ header button:hover {
 
 .actionsContainer button:hover {
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column; /* Switch to column for smaller screens */
+    align-items: stretch; /* Stretch items to fill width */
+  }
+
+  header button {
+    width: 30%; /* Full width for button in column layout */
+  }
 }
 
 @media (max-width: 600px) {
